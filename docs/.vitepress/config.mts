@@ -6,7 +6,7 @@ export default defineConfig({
   title: `${env} vitepress-test`,
   description: `A VitePress ${env} Site`,
   base: `/vitepress-test/${env}/`,
-  outDir: `.vitepress/dist/${env}`,
+  outDir: `dist/${env}`,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

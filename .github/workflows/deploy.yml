@@ -48,7 +48,7 @@ jobs:
           npm run docs:build
           touch docs/.vitepress/dist/.nojekyll
       - name: Copy default ENV to root dist
-        run: cp -r docs/.vitepress/dist/qa/* docs/.vitepress/dist/
+        run: cp -r docs/dist/qa/* docs/dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
