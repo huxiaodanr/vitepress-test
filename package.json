@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "docs:dev": "ENV=qa vitepress dev docs",
+    "docs:build": "ENV=qa vitepress build docs && ENV=dev vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {

@@ -1,4 +1,14 @@
+<script setup>
+  import { useData } from 'vitepress';
+  
+  const data = useData();
+
+  const env = data?.theme?.value?.env;
+</script>
+
 # Markdown Extension Examples
+
+## ENVIRONMENT: {{env}}
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 

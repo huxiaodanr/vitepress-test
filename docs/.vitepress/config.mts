@@ -1,17 +1,19 @@
 import { defineConfig } from "vitepress";
 
+const env = process.env.ENV || "";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "vitepress-test",
-  description: "A VitePress Test Site",
-  base: "/vitepress-test/",
+  title: `${env} vitepress-test`,
+  description: `A VitePress ${env} Site`,
+  base: `/vitepress-test/${env}/`,
+  outDir: `.vitepress/dist/${env}`,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
+      { text: `${env} Home`, link: "/" },
       { text: "Examples", link: "/markdown-examples" },
     ],
-
+    env,
     sidebar: [
       {
         text: "Examples",

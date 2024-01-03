@@ -45,8 +45,10 @@ jobs:
         run: npm ci # or pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: |
-          npm run docs:build
+          ENV=qa vitepress build docs && ENV=dev vitepress build docs
           touch docs/.vitepress/dist/.nojekyll
+      - name: Copy default ENV to root dist
+        run: cp -r docs/.vitepress/dist/qa/* docs/.vitepress/dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
