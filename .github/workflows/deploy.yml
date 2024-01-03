@@ -45,7 +45,7 @@ jobs:
         run: npm ci # or pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: |
-          ENV=qa vitepress build docs && ENV=dev vitepress build docs
+          npm run docs:build
           touch docs/.vitepress/dist/.nojekyll
       - name: Copy default ENV to root dist
         run: cp -r docs/.vitepress/dist/qa/* docs/.vitepress/dist/
